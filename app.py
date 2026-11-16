@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 
 
-DOMAIN = "rambauske.dev"
+DOMAIN = "alexram.app"
 SITE_URL = f"https://{DOMAIN}"
 
 # Add future destinations here. The page layout is generated from this list.
