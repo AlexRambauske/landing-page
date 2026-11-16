@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Alex Rambauske — autonomous systems, vision, algorithms.">
+    <meta name="theme-color" content="#11110f">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Alex Rambauske">
+    <meta property="og:description" content="What cannot be done is merely unmapped">
+    <meta property="og:url" content="{{ site_url }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Alex Rambauske">
+    <meta name="twitter:description" content="What cannot be done is merely unmapped">
+    <title>Alex Rambauske</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <div class="ambient-field" aria-hidden="true"></div>
+    <div class="page-shell">
+      <header class="masthead">
+        <a class="wordmark" href="/" aria-label="Alex Rambauske home">AR</a>
+        <span class="location">Greece <span class="rule-dot" aria-hidden="true"></span> 2026</span>
+      </header>
+
+      <main>
+        <section class="intro" aria-labelledby="name">
+          <p class="eyebrow">Independent systems / 01</p>
+          <h1 id="name">Alex<br><em>Rambauske</em></h1>
+          <p class="tagline">What cannot be done is merely unmapped</p>
+          <p class="description">
+            Where software, hardware, mathematics, and intelligent systems meet.
+          </p>
+        </section>
+
+        <nav class="destinations" aria-label="Primary destinations">
+          {% for destination in destinations %}
+            <a class="destination" href="{{ destination.url }}" target="_blank" rel="noopener noreferrer">
+              <span class="destination-index">{{ "%02d"|format(loop.index) }}</span>
+              <span class="destination-copy">
+                <span class="destination-name">{{ destination.title }}</span>
+                <span class="destination-description">{{ destination.description }}</span>
+              </span>
+              <span class="destination-arrow" aria-hidden="true">↗</span>
+            </a>
+          {% endfor %}
+        </nav>
+      </main>
+
+      <footer class="footer">
+        <span class="footer-label">Contact</span>
+        <nav class="contact-links" aria-label="Contact links">
+          <a href="https://github.com/AlexRambauske" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/alex-rambauske/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:rambauske@acg.edu">Email</a>
+        </nav>
+      </footer>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
