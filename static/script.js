@@ -20,6 +20,12 @@
     if (!frame) frame = requestAnimationFrame(paintPointer);
   };
 
+  const onPointerLeave = () => {
+    nextX = 50;
+    nextY = 45;
+    if (!frame) frame = requestAnimationFrame(paintPointer);
+  };
+
   const onVisibilityChange = () => {
     if (document.hidden && frame) {
       cancelAnimationFrame(frame);
@@ -28,5 +34,6 @@
   };
 
   window.addEventListener("pointermove", onPointerMove, { passive: true });
+  document.documentElement.addEventListener("pointerleave", onPointerLeave);
   document.addEventListener("visibilitychange", onVisibilityChange);
 })();

@@ -17,14 +17,13 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at var(--pointer-x, 50%) var(--pointer-y, 45%), rgba(201, 168, 120, .055), transparent 30rem),
+    radial-gradient(circle at var(--pointer-x, 50%) var(--pointer-y, 45%), rgba(201, 168, 120, .075), transparent 26rem),
     var(--ground);
   color: var(--ink);
   font-family: "Manrope", sans-serif;
   font-size: 15px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  transition: background-position .2s ease-out;
 }
 
 body::before {
